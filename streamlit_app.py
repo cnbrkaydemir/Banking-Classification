@@ -133,9 +133,9 @@ with st.form("banking_marketing"):
         print(result)
 
         if result:
-            st.caption("Positive: Looks like the customer will subscribe to the term deposit.")
+            st.markdown("<h4>Positive: Looks like the customer will subscribe to the term deposit.<h4/>", unsafe_allow_html=True)
 
         else:
-            st.caption("Negative: Unfortunately the customer will likely not subscribe to the term deposit.")
+            st.markdown("<h4>Negative: Unfortunately the customer will likely not subscribe to the term deposit.</h4>", unsafe_allow_html=True)
     
 
