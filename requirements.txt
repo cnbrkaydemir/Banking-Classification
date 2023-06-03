@@ -2,3 +2,4 @@ numpy==1.21.4
 pickle-mixin==1.0.2
 streamlit==1.23.1
 scikit-learn==1.0.1
+lightgbm==3.3.5
