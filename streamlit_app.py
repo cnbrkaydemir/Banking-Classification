@@ -99,27 +99,30 @@ with st.form("banking_marketing"):
         (day_dict.keys())
     )
 
+    duration = st.number_input('Total duration of the last contact with this client ?')
 
-    campaign = st.number_input('Number of contacts performed during this campaign and for this client')
+    campaign = st.number_input('Number of contacts performed during this campaign and for this client ?')
 
-    p_days = st.number_input('Number of days that passed by after the client was last contacted from a previous campaign')
+    p_days = st.number_input('Number of days that passed by after the client was last contacted from a previous campaign ?')
 
-    previous = st.number_input('Number of contacts performed before this campaign and for this client')
+    previous = st.number_input('Number of contacts performed before this campaign and for this client ?')
 
     p_out = st.selectbox(
         "Outcome of the previous marketing campaign ?",
         (poutcome_dict.keys())
     )
 
-    emp_var_rate = st.number_input('Employee variance rate for this client')
+    emp_var_rate = st.number_input('Employee variance rate for this client ?')
 
-    cons_price_idx = st.number_input('Consumer price index')
+    cons_price_idx = st.number_input('Consumer price index ?')
 
-    cons_conf_idx = st.number_input('Consumer confidence index')
+    cons_conf_idx = st.number_input('Consumer confidence index ?')
     
-    euribor = st.number_input('Euribor 3 month rate ')
+    euribor = st.number_input('Euribor 3 month rate ?')
     
-    nr_employed = st.number_input('Number of employees')
+    nr_employed = st.number_input('Number of employees ?')
+
+    totalLoan = loan_dict[loan] + housing_dict[housing] 
 
 
     submit_form = st.form_submit_button(label="Predict", help="Click to predict!")
@@ -127,8 +130,8 @@ with st.form("banking_marketing"):
     if submit_form:
         result = predict([age, jobs[job], marital_status[maritial], education_status[education], default_dict[default], 
                               housing_dict[housing], loan_dict[loan], contact_dict[contact], month_dict[month], day_dict[day],
-                              campaign, p_days, previous, poutcome_dict[p_out], emp_var_rate, cons_price_idx, cons_conf_idx, euribor,
-                              nr_employed
+                              duration, campaign, p_days, previous, poutcome_dict[p_out], emp_var_rate, cons_price_idx, cons_conf_idx,
+                                euribor,nr_employed, totalLoan
                               ])
         print(result)
 
