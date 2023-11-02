@@ -1,6 +1,6 @@
 import streamlit as st
-import pickle
 import numpy as np
+from utils import *
 
 
 jobs = {"admin":0, "blue-collar":1, "entrepreneur":2, "housemaid":3, "management":4, "retired":5,"self-employed":6, "services":7, "technician":8, "unemployed":9, "Unknown":10}
@@ -23,22 +23,6 @@ month_dict = {"January":0, "February":1, "March":2, "April":3, "May":4, "June":5
 day_dict = {"Friday":0 ,"Monday":1, "Thursday":2, "Tuesday":3, "Wednesday":4}
 
 poutcome_dict = {"failure":0, "nonexistant":1, "success":2}
-
-
-model = pickle.load(open('lgb_model.sav', 'rb'))
-
-
-def predict(customer_data):
-
-    arr = np.asarray(customer_data)
-
-    
-    customer_data = arr.reshape(1,-1)
-
-    prediction = model.predict(customer_data)
-
-
-    return prediction
 
 
 
@@ -141,4 +125,3 @@ with st.form("banking_marketing"):
         else:
             st.markdown("<h4>Negative: Unfortunately the customer will likely not subscribe to the term deposit.</h4>", unsafe_allow_html=True)
     
-
