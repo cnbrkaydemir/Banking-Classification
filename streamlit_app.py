@@ -112,14 +112,13 @@ with st.form("banking_marketing"):
     submit_form = st.form_submit_button(label="Predict", help="Click to predict!")
     
     if submit_form:
-        result = predict([age, jobs[job], marital_status[maritial], education_status[education], default_dict[default], 
+        result = predict([np.log1p(age), jobs[job], marital_status[maritial], education_status[education], default_dict[default],
                               housing_dict[housing], loan_dict[loan], contact_dict[contact], month_dict[month], day_dict[day],
-                              duration, campaign, p_days, previous, poutcome_dict[p_out], emp_var_rate, cons_price_idx, cons_conf_idx,
-                                euribor,nr_employed, totalLoan
+                              np.log1p(duration), np.log1p(campaign), p_days, np.log1p(previous), poutcome_dict[p_out], emp_var_rate, cons_price_idx, cons_conf_idx,
+                                euribor,nr_employed ** 2, totalLoan
                               ])
-        print(result)
 
-        if result:
+        if result > 0.5:
             st.markdown("<h4>Positive: Looks like the customer will subscribe to the term deposit.<h4/>", unsafe_allow_html=True)
 
         else:

@@ -1,14 +1,20 @@
 import pandas as pd
 import numpy as np
+import tensorflow as tf
 import pickle
 
 
 def predict(customer_data):
-    model = pickle.load(open('lgb_model.sav', 'rb'))
+    model = tf.keras.models.load_model('ann_model.keras')
+
+    scaler = pickle.load(open('scaler.sav', 'rb'))
+
 
     arr = np.asarray(customer_data)
-    
-    customer_data = arr.reshape(1,-1)
+
+
+    customer_data = scaler.fit_transform(arr.reshape(1,-1))
+
 
 
     prediction = model.predict(customer_data)
