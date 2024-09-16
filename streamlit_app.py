@@ -25,10 +25,13 @@ day_dict = {"Friday":0 ,"Monday":1, "Thursday":2, "Tuesday":3, "Wednesday":4}
 poutcome_dict = {"failure":0, "nonexistant":1, "success":2}
 
 
+st.image("static/bank.png", width=60)
 
-st.title("Banking Classification")
+st.title("Banking Term Deposit Subscription Prediction ⭐")
 
-st.write("Fill in the form with customer information to predict if they will subscribe to term deposit.")
+st.write("[![Star](https://img.shields.io/github/stars/cnbrkaydemir/Banking-Classification.svg?logo=github&style=social)](https://github.com/cnbrkaydemir/Banking-Classification)")
+
+st.write("Welcome to our Banking Subscription Prediction App, where a machine learning model predicts whether you are likely to subscribe to a term deposit based on your personal information. By analyzing details like age, job type, and financial status, the tool helps banks better understand customer behavior and make informed decisions.")
 
 result = 0
 
