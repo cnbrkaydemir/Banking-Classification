@@ -12,8 +12,9 @@ This project demonstrates the use of machine learning for classifying whether cu
 5. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
 6. [Preprocessing](#preprocessing)
 7. [Model Training](#model-training)
-8. [Model Evaluation](#model_evaluation)
-9. [Next Steps](#next_steps)
+8. [Model Evaluation](#model-evaluation)
+9. [Results](#results)
+10. [Next Steps](#next-steps)
 
 
 ## Project Overview
@@ -163,6 +164,3 @@ Accuracy or RMSE metrics can be useful if the problem revolved around a balancad
 ## Next Steps
  Even though this is a very detailed analysis, we would like to share some recommendations for the next steps. Hyper parameter tuning on SVM and Gradient Boosting takes a tremendous amount of time. Detailed hyperparameter tuning on these models may achieve higher scores. Therefore the first recommendation is tuning these models. Second recommendation is trying different ANN models. ANN model we have utilized performed very well but there is always a better ANN model so we recomend trying out different ANN architectures.
 
-## Special Thanks
-
-Special thanks to my friends Utku Oktay and Selçuk Akif Topkaya who have collaborated on the earlier stages of this application. 
