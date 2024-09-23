@@ -5,9 +5,9 @@ import pickle
 
 
 def predict(customer_data):
-    model = tf.keras.models.load_model('ann_model.keras')
+    model = tf.keras.models.load_model('models/ann_model.keras')
 
-    scaler = pickle.load(open('scaler.sav', 'rb'))
+    scaler = pickle.load(open('models/scaler.sav', 'rb'))
 
 
     arr = np.asarray(customer_data)
